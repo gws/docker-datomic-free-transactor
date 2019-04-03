@@ -3,6 +3,8 @@
 An unofficial Docker image packaging the [Datomic Free][datomic-free-download]
 transactor.
 
+The image is available on [Docker Hub][docker-hub-repository].
+
 ## Quickstart
 
 In one terminal, run the transactor:
@@ -88,3 +90,4 @@ make push
 ```
 
 [datomic-free-download]: https://my.datomic.com/downloads/free
+[docker-hub-repository]: https://hub.docker.com/r/gordonstratton/datomic-free-transactor
