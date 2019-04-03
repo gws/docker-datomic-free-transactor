@@ -1,0 +1,12 @@
+--- a/free-transactor-template.properties	2019-04-01 06:53:28.427615987 -0700
++++ b/free-transactor-template.properties	2019-04-01 09:44:20.365325910 -0700
+@@ -1,7 +1,8 @@
+ ###################################################################
+ 
+ protocol=free
+-host=localhost
++host=
++alt-host=
+ port=4334
+ 
+ 

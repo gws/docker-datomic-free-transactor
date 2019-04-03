@@ -1,0 +1,16 @@
+--- a/logback.xml	2019-04-01 06:53:35.939554696 -0700
++++ b/logback.xml	2019-04-01 06:54:41.527019556 -0700
+@@ -5,12 +5,7 @@
+     <resetJUL>true</resetJUL>
+   </contextListener>
+ 
+-  <appender name="MAIN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+-      <fileNamePattern>${DATOMIC_LOG_DIR:-log}/%d{yyyy-MM-dd}.log</fileNamePattern>
+-      <maxHistory>72</maxHistory> 
+-    </rollingPolicy>
+-    <prudent>true</prudent> <!-- multi jvm safe, slower -->
++  <appender name="MAIN" class="ch.qos.logback.core.ConsoleAppender">
+     <encoder>
+       <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %-10contextName %logger{36} - %msg%n</pattern>
+     </encoder>
