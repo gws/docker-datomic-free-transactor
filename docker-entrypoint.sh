@@ -1,12 +1,14 @@
 #!/bin/sh
 
-host="${DATOMIC_HOST:=0.0.0.0}"
-alt_host="${DATOMIC_ALT_HOST:=localhost}"
-storage_admin_password="${DATOMIC_STORAGE_ADMIN_PASSWORD:=admin}"
-old_storage_admin_password="${DATOMIC_OLD_STORAGE_ADMIN_PASSWORD}"
-storage_datomic_password="${DATOMIC_STORAGE_DATOMIC_PASSWORD:=datomic}"
-old_storage_datomic_password="${DATOMIC_OLD_STORAGE_DATOMIC_PASSWORD}"
-no_chown_data="${DATOMIC_NO_CHOWN_DATA}"
+set -eu
+
+host="${DATOMIC_HOST:-0.0.0.0}"
+alt_host="${DATOMIC_ALT_HOST:-localhost}"
+storage_admin_password="${DATOMIC_STORAGE_ADMIN_PASSWORD:-admin}"
+old_storage_admin_password="${DATOMIC_OLD_STORAGE_ADMIN_PASSWORD:-}"
+storage_datomic_password="${DATOMIC_STORAGE_DATOMIC_PASSWORD:-datomic}"
+old_storage_datomic_password="${DATOMIC_OLD_STORAGE_DATOMIC_PASSWORD:-}"
+no_chown_data="${DATOMIC_NO_CHOWN_DATA:-}"
 
 memory_limit_bytes=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)
 
