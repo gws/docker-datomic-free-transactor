@@ -1,7 +1,9 @@
 FROM debian:stable AS build
 
-ARG DATOMIC_VERSION=0.9.5703
+ARG DATOMIC_VERSION=0.9.5703.21
 ARG DATOMIC_IDENTIFIER=datomic-free-${DATOMIC_VERSION}
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
@@ -24,7 +26,7 @@ RUN \
   && mv /srv/datomic/config/samples/free-transactor-template.properties \
     /srv/datomic/config/transactor.properties
 
-FROM openjdk:8u212-jre-stretch
+FROM openjdk:8u232-jre
 LABEL maintainer="Gordon Stratton <gordon.stratton@gmail.com>"
 
 RUN groupadd -r datomic && useradd -r -g datomic datomic
